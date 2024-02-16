@@ -5,6 +5,7 @@ class Game(
     val cover: String
 
 ) {
+    var description:String? = null
     override fun toString(): String {
         return "Title: '$title',\n" +
                 "Cover: '$cover', \n"
