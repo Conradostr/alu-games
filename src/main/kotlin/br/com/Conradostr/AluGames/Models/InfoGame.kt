@@ -1,4 +1,4 @@
-package br.com.Conradostr.Models
+package br.com.Conradostr.AluGames.Models
 
 class InfoGame(
     val info: InfoApiShark

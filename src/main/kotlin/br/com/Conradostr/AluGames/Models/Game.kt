@@ -1,4 +1,4 @@
-package br.com.Conradostr.Models
+package br.com.Conradostr.AluGames.Models
 
 class Game(
     val title: String,
@@ -8,7 +8,8 @@ class Game(
     var description:String? = null
     override fun toString(): String {
         return "Title: '$title',\n" +
-                "Cover: '$cover', \n"
+                "Cover: '$cover', \n" +
+                "Description: $description"
 
     }
 }
