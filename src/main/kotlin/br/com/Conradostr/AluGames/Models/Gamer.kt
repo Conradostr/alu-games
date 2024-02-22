@@ -1,5 +1,6 @@
 package br.com.Conradostr.AluGames.Models
 
+import java.util.Scanner
 import kotlin.random.Random
 
 data class Gamer(
@@ -14,6 +15,7 @@ data class Gamer(
                 createIdInternal()
             }
         }
+    var favoriteGames = mutableListOf<Game?>()
     var idInternal:String? = null
         private set
     constructor(
@@ -57,6 +59,27 @@ data class Gamer(
             throw IllegalArgumentException("Email invalid")
         }
 
+    }
+
+    companion object {
+        fun createGamer(reading: Scanner): Gamer{
+            println("Boas vindas ao AluGames! Vamos fazer seu cadastro. Digite seu nome:")
+            val name = reading.nextLine()
+            println("Digite seu e-mail:")
+            val email = reading.nextLine()
+            println("Deseja completar seu cadastro com usuário e data de nascimento? (S/N)")
+            val option = reading.nextLine()
+
+            if(option.equals("s", true)){
+                println("Digite sua data de nascimento(DD/MM/AAAA):")
+                val birth = reading.nextLine()
+                println("Digite seu nome de usuário:")
+                val user = reading.nextLine()
+                return Gamer(name, email, birth, user)
+
+            }
+            return Gamer(name, email)
+        }
     }
 
 
